@@ -9,7 +9,6 @@ import { getServerSession } from 'next-auth'
 import { useSession } from 'next-auth/react'
 import { FormEvent, useEffect, useState } from 'react'
 import { Skeleton } from '@nextui-org/react'
-import { updateEmail } from './serverActions'
 
 export default function ProfileForm() {
 
@@ -37,7 +36,7 @@ export default function ProfileForm() {
             {/** Email change */}
             <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="name" className='text-lg font-bold'>E-Mail ändern</Label>
-                <form className='w-full flex gap-4' action={updateEmail}>
+                <form className='w-full flex gap-4'>
                     {status === 'loading' ? (
                         <div className='border-2 w-full h-full p-1 rounded-md'>
                             <Skeleton className='w-full h-full rounded-md' />

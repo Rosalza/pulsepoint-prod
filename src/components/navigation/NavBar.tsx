@@ -54,12 +54,12 @@ export default function NavBar() {
       {/** Navbar main menu items */}
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Link href="#" color='primary'>
+          <Link href="/app" color='primary'>
             Start
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="#" color='foreground'>
+          <Link href="/app/team" color='foreground'>
             Team
           </Link>
         </NavbarItem>

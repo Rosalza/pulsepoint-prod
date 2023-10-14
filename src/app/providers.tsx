@@ -3,6 +3,7 @@
 //Imports
 import { NextUIProvider } from "@nextui-org/react"
 import { SessionProvider } from "next-auth/react"
+import { ThemeProvider as NextThemesProvider } from 'next-themes'
 
 //Define types
 type Props = {
@@ -17,8 +18,17 @@ export const Providers = ({ children }: Props) => {
                 {/** NextUI provider */}
                 <NextUIProvider>
 
-                    {/** Render children */}
-                    { children }
+                    {/** Theme Provider - dark mode */}
+                    <NextThemesProvider
+                        attribute="class"
+                        defaultTheme="system"
+                        enableSystem
+                        disableTransitionOnChange
+                    >
+
+                        {/** Render children */}
+                        { children }
+                    </NextThemesProvider>
                 </NextUIProvider>
             </SessionProvider>
         </>
